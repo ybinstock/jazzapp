@@ -1,0 +1,20 @@
+{
+  "development": {
+    "database": "jazzbar_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "egoxtkiflgjxab",
+    "password": "h2OgTRA5Kxomhv24mUAOqOqZ8a",
+    "database": "d3gq0e938mnsah",
+    "host": "ec2-54-225-243-113.compute-1.amazonaws.com",
+    "port": "5432",
+    "dialect": "postgres"
+  }
+}

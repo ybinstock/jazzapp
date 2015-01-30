@@ -1,0 +1,83 @@
+<!-- list of favorites -->
+
+<% include partials/header.ejs%>
+
+	<style>
+body {
+	background: url('http://th07.deviantart.net/fs71/PRE/f/2012/002/d/a/black_and_white_skyline_by_larryraisch-d4l52km.jpg');
+}
+
+#custom-search-form {
+    margin:0;
+    margin-top: 5px;
+    padding: 0;
+}
+
+#custom-search-form .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: width  0.2s ease-in-out;
+    -moz-transition:width  0.2s ease-in-out;
+    -o-transition: width  0.2s ease-in-out;
+    transition: width  0.2s ease-in-out;
+}
+
+#custom-search-form button {
+    border: 0;
+    background: none;
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}
+
+.search-query:focus{
+    width: 260px;
+}
+
+.btn {
+    opacity: 0.7;
+}
+</style>
+
+<title>Favorites</title>
+
+	<a href="/homepage" class="favorites">
+		<button class="btn btn-default btn-outline btn-small">Go Home</button></a>
+			<h2 class="head2">Favorites Queue</h2>
+
+<br><br><br>
+
+<div class="container text-center">
+ 	<ul>
+	<% listOfFavorites.forEach(function(favorites) { %>
+
+<form method="post" action="/delete/<%=favorites.id%>?_method=DELETE" ><br><br>
+<%= favorites.title %><br>
+	<button class="btn btn-default btn-outline btn-small">Delete</button><br>
+</form>
+<% }) %>
+	</ul>
+</div>
+<br><br><br>
+
+<a href="/logout" class="btn btn-default btn-outline">
+<button class="btn btn-default btn-outline btn-small">Log out here</button>
+</a>
+
+<% include partials/footer.ejs%>
+

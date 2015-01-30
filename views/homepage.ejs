@@ -1,0 +1,82 @@
+<!-- Homepage and search page -->
+
+<% include partials/header.ejs%>
+
+<style>
+body {
+	background: url('http://th07.deviantart.net/fs71/PRE/f/2012/002/d/a/black_and_white_skyline_by_larryraisch-d4l52km.jpg');
+}
+
+#custom-search-form {
+    margin:0;
+    margin-top: 5px;
+    padding: 0;
+}
+
+#custom-search-form .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: width  0.2s ease-in-out;
+    -moz-transition:width  0.2s ease-in-out;
+    -o-transition: width  0.2s ease-in-out;
+    transition: width  0.2s ease-in-out;
+}
+
+#custom-search-form button {
+    border: 0;
+    background: none;
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}
+
+.search-query:focus{
+    width: 260px;
+}
+
+.btn {
+    opacity: 0.7;
+}
+</style>
+
+<p style = "color:blue">
+    <%= message %>
+</p>
+
+<h1 class="title">Search for jazz bars</h1>
+
+<form action="/search" class="form-search">
+<div class="container">
+	<div class="row">
+        <div class="span12">
+
+<form id="custom-search-form" class="form-search form-horizontal pull-right">
+    <div class="input-append span12">
+    <input type="text" class="search-query mac-style" name="locationsearch" placeholder="City or Location" autofocus>
+
+
+<input type="submit" class="btn btn-default btn-outline" placeholder="Search"></input>
+
+                </div>
+            </form>
+        </div>
+	</div>
+</div>
+ </form>
+
+<% include partials/footer.ejs%>
